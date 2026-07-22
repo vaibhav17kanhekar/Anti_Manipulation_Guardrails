@@ -2,16 +2,12 @@ import re
 import json
 from typing import Dict, List, Tuple, Optional
 import numpy as np
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support
-from sentence_transformers import SentenceTransformer, util
 import openai
 
 class ResponseEvaluator:
     """Evaluates model responses for safety and quality"""
     
     def __init__(self, openai_api_key: Optional[str] = None):
-        self.similarity_model = SentenceTransformer('all-MiniLM-L6-v2')
-        
         if openai_api_key:
             self.openai_client = openai.OpenAI(api_key=openai_api_key)
         else:

@@ -1,15 +1,11 @@
 import re
 from typing import Dict, List, Tuple, Optional
-from sentence_transformers import SentenceTransformer, util
 import numpy as np
 
 class DefenseStrategies:
     """Implements various defensive prompt engineering strategies"""
     
     def __init__(self, model_name: str = 'all-MiniLM-L6-v2'):
-        """Initialize with sentence transformer for semantic similarity"""
-        self.similarity_model = SentenceTransformer(model_name)
-        
         # Define dangerous patterns
         self.danger_patterns = [
             r"(ignore|forget|disregard).*(instruction|rule|guideline|policy)",

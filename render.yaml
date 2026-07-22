@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: anti-manipulation-guardrails
+    runtime: python
+    buildCommand: pip install -r requirements-deploy.txt
+    startCommand: gunicorn api:app --bind 0.0.0.0:$PORT
+    plan: free
