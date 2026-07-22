@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block title %}Results & Visualizations - {{ super() }}{% endblock %}
+
+{% block extra_css %}
+<style>
+    .chart-container {
+        position: relative;
+        height: 300px;
+        width: 100%;
+    }
+    .results-table {
+        font-size: 0.9rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">
+            <i class="fas fa-chart-bar"></i> Experiment Results & Visualizations
+        </h1>
+        <p class="lead">
+            View and analyze results from past experiments.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Experiment Selection -->
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-history"></i> Select Experiment</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="experiment-select" class="form-label">Choose an experiment:</label>
+                    <select class="form-select" id="experiment-select">
+                        <option value="">Loading experiments...</option>
+                    </select>
+                </div>
+                <div id="experiment-info" class="d-none">
+                    <h6>Experiment Details</h6>
+                    <table class="table table-sm">
+                        <tr>
+                            <td>ID:</td>
+                            <td id="info-id">-</td>
+                        </tr>
+                        <tr>
+                            <td>Date:</td>
+                            <td id="info-date">-</td>
+                        </tr>
+                        <tr>
+                            <td>Prompts:</td>
+                            <td id="info-prompts">-</td>
+                        </tr>
+                        <tr>
+                            <td>Defenses:</td>
+                            <td id="info-defenses">-</td>
+                        </tr>
+                    </table>
+                    <button id="load-results" class="btn btn-primary w-100">
+                        <i class="fas fa-chart-line"></i> Load Results
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts and Visualizations -->
+    <div class="col-md-8 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="fas fa-chart-pie"></i> Results Visualization</h5>
+            </div>
+            <div class="card-body">
+                <div id="charts-container">
+                    <div class="text-center text-muted py-5">
+                        <i class="fas fa-chart-bar fa-3x mb-3"></i>
+                        <h5>No experiment selected</h5>
+                        <p>Select an experiment from the left to view results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Results Table -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="fas fa-table"></i> Detailed Results</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover results-table" id="results-table">
+                        <thead>
+                            <tr>
+                                <th>Prompt ID</th>
+                                <th>Prompt</th>
+                                <th>Defense</th>
+                                <th>Manipulation Type</th>
+                                <th>Safety Score</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-table-body">
+                            <!-- Results will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Templates for Charts -->
+<template id="chart-template">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h6>Attack Success Rate by Defense</h6>
+                    <div class="chart-container">
+                        <canvas id="chart-defense-asr"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h6>Safety Score Distribution</h6>
+                    <div class="chart-container">
+                        <canvas id="chart-safety-dist"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h6>Manipulation Type Effectiveness</h6>
+                    <div class="chart-container">
+                        <canvas id="chart-manipulation"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h6>Overall Statistics</h6>
+                    <div class="chart-container">
+                        <canvas id="chart-overall"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/results.js') }}"></script>
+{% endblock %}

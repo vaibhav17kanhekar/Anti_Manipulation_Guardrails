@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}About - {{ super() }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">
+            <i class="fas fa-info-circle"></i> About This Project
+        </h1>
+        <p class="lead">
+            Understanding and defending against emotional manipulation in Large Language Models.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-book"></i> Project Overview</h5>
+            </div>
+            <div class="card-body">
+                <h5>MSc Individual Project</h5>
+                <p>
+                    This project, titled <strong>"Building Anti-Manipulation Guardrails: Testing and Proposing Defensive Prompt Engineering Strategies Against Emotional Manipulation of LLMs"</strong>, investigates the vulnerability of Large Language Models (LLMs) to emotional manipulation through prompt engineering.
+                </p>
+                <p>
+                    The research focuses on identifying effective defensive strategies to protect LLMs from being manipulated into generating harmful, unethical, or dangerous content through emotional appeals in user prompts.
+                </p>
+
+                <h5 class="mt-4">Key Objectives</h5>
+                <ul>
+                    <li>Identify and categorize emotional manipulation techniques in prompts</li>
+                    <li>Develop and test defensive prompt engineering strategies</li>
+                    <li>Evaluate defense effectiveness across different LLM architectures</li>
+                    <li>Propose robust guardrails against emotional manipulation</li>
+                </ul>
+
+                <h5 class="mt-4">Methodology</h5>
+                <p>
+                    The project employs a systematic experimental approach, generating a dataset of emotionally manipulative prompts and testing various defensive strategies. The evaluation metrics include Attack Success Rate (ASR), safety scores, and response quality measures.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="fas fa-user-graduate"></i> Author Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <i class="fas fa-user-circle fa-5x text-secondary"></i>
+                    <h5 class="mt-3">Vaibhav Kanhekar</h5>
+                    <p class="text-muted">MSc Engineering with Management</p>
+                </div>
+
+                <h6>Contact</h6>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-envelope me-2"></i> k25130112@kcl.ac.uk</li>
+                    <li><i class="fas fa-university me-2"></i> King's College London</li>
+                    <li><i class="fas fa-calendar me-2"></i> Academic Year 2025-2026</li>
+                </ul>
+
+                <h6 class="mt-4">Supervisor</h6>
+                <p>Dr. Madeline Polmear<br>
+                <small class="text-muted">Department of Engineering</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="fas fa-code"></i> Technical Details</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Technologies Used</h6>
+                        <ul>
+                            <li><strong>Backend:</strong> Python, Flask, REST API</li>
+                            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, Bootstrap 5, Chart.js</li>
+                            <li><strong>LLM APIs:</strong> OpenAI GPT, Anthropic Claude, Hugging Face models</li>
+                            <li><strong>Data Analysis:</strong> Pandas, NumPy, SciPy</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Project Structure</h6>
+                        <ul>
+                            <li><strong>Attack Generation:</strong> Automated generation of emotionally manipulative prompts</li>
+                            <li><strong>Defense Strategies:</strong> Multiple defensive prompt engineering techniques</li>
+                            <li><strong>Experiment Framework:</strong> Systematic testing and evaluation</li>
+                            <li><strong>Web Interface:</strong> Interactive visualization and analysis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h6>Repository</h6>
+                    <p>
+                        <i class="fab fa-github fa-lg me-2"></i>
+                        <a href="https://github.com/yourusername/anti-manipulation-guardrails" target="_blank">
+                            github.com/yourusername/anti-manipulation-guardrails
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-warning text-white">
+                <h5 class="mb-0"><i class="fas fa-shield-alt"></i> Ethical Considerations</h5>
+            </div>
+            <div class="card-body">
+                <p>
+                    This research is conducted with strict ethical guidelines. All experiments are performed in controlled environments, and no harmful content is disseminated. The project aims to improve AI safety and contribute to the development of more robust and ethical AI systems.
+                </p>
+                <p class="mb-0">
+                    <small class="text-muted">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        This project has received ethical approval from the University Ethics Committee (Reference: ETH-2024-XXX).
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

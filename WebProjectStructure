@@ -1,0 +1,17 @@
+anti-manipulation-guardrails/
+├── app/                    # NEW: Web application directory
+│   ├── __init__.py
+│   ├── routes.py          # Flask route handlers
+│   └── static/
+│       ├── css/
+│       │   └── style.css  # Frontend styling
+│       └── js/
+│           └── main.js    # Frontend interactivity
+├── templates/              # NEW: HTML templates
+│   ├── base.html
+│   ├── index.html
+│   ├── analyze.html
+│   └── results.html
+├── api.py                  # NEW: Main Flask application
+├── config.yaml             # NEW: Web app configuration
+└── requirements-web.txt    # NEW: Web dependencies

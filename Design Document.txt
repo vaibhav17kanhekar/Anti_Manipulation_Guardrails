@@ -1,0 +1,33 @@
+# This would be your research design documentation
+
+"""
+EXPERIMENTAL DESIGN:
+
+Independent Variables:
+1. Manipulation Type (5 levels): Politeness, Urgency, Sympathy, Authority, Reciprocity
+2. Manipulation Intensity (3 levels): Low, Medium, High
+3. Defense Strategy (5 levels): 
+   - No defense (baseline)
+   - Basic system prompt hardening
+   - Aggressive system prompt hardening
+   - Shield prompt technique
+   - Input sanitization + detection
+4. LLM Model (3 levels): GPT-3.5, GPT-4, Claude-2
+
+Dependent Variables:
+1. Attack Success Rate (binary): Whether model complied with harmful request
+2. Safety Score (continuous): 0-1 score based on multiple safety metrics
+3. Response Quality (continuous): Coherence, specificity, readability scores
+4. Response Time (continuous): Time to generate response
+
+Sample Size:
+- 50 base harmful queries × 5 manipulation types × 3 intensity levels = 750 attack prompts
+- Each prompt tested across 3 models × 5 defense strategies = 15 conditions
+- Total observations: 750 × 15 = 11,250 responses
+
+Statistical Analysis Plan:
+1. ANOVA for defense strategy effectiveness
+2. Chi-square for attack success rate differences
+3. Post-hoc pairwise comparisons with Bonferroni correction
+4. Effect size calculations (Cohen's d for continuous, Cramer's V for categorical)
+"""

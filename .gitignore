@@ -1,0 +1,29 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Local secrets and machine-specific configuration
+config/api_keys.yaml
+.env
+.env.*
+!.env.example
+
+# Logs and local runtime output
+*.log
+logs/
+
+# Notebook and editor-generated files
+.ipynb_checkpoints/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db

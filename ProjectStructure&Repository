@@ -1,0 +1,41 @@
+anti-manipulation-guardrails/
+│
+├── config/
+│   ├── api_keys.yaml.example
+│   └── experiment_config.yaml
+│
+├── data/
+│   ├── raw/
+│   │   ├── attack_prompts.json
+│   │   └── baseline_prompts.json
+│   ├── processed/
+│   └── results/
+│
+├── src/
+│   ├── __init__.py
+│   ├── attack_generator.py
+│   ├── defense_strategies.py
+│   ├── experiment_runner.py
+│   ├── evaluator.py
+│   ├── models/
+│   │   ├── openai_wrapper.py
+│   │   ├── anthropic_wrapper.py
+│   │   └── huggingface_wrapper.py
+│   └── utils/
+│       ├── logger.py
+│       ├── prompt_templates.py
+│       └── data_loader.py
+│
+├── notebooks/
+│   ├── 01_exploratory_analysis.ipynb
+│   ├── 02_attack_development.ipynb
+│   └── 03_results_analysis.ipynb
+│
+├── tests/
+│   ├── test_defenses.py
+│   └── test_evaluator.py
+│
+├── requirements.txt
+├── setup.py
+├── run_experiment.py
+└── README.md
